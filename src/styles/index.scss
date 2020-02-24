@@ -1,0 +1,30 @@
+$palette: (
+  (name: dark-blue, color: #003369),
+  (name: gray-2, color: #d0cfcd),
+  (name: gray-5, color: #b1b1b1),
+  (name: gray-11, color: #54565a),
+  (name: bright-blue, color: #00c2f3),
+  (name: green, color: #50bc81),
+  (name: yellow, color: #ffc20e),
+  (name: tomato, color: f37658),
+  (name: gray-7, color: #98989a),
+  (name: gray-9, color: #76777a),
+  (name: light-blue, color: #a1ddf9),
+  (name: light-green, color: #abd9ba),
+  (name: light-yellow, color: #ffdd91),
+  (name: light-tomato, color: #fab79e),
+);
+
+@for $idx from 1 through length($palette) {
+  $colorInfo: nth($palette, $idx);
+
+  $name: map-get($colorInfo, name);
+  $color: map-get($colorInfo, color);
+
+  .bg-#{$name} {
+    background-color: #{$color};
+  }
+  .text-#{$name} {
+    color: #{$color};
+  }
+}
